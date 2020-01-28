@@ -55,10 +55,10 @@ instruccion
 
 exp
 	: '-' exp %prec UMENOS	{ $$ = $2 * -1; }
-	| exp '+' exp       	{ $$ = $1 + $3; }
-	| exp '-' exp     		{ $$ = $1 - $3; }
-	| exp '*' exp       	{ $$ = $1 * $3; }
-	| exp '/' exp  			{ $$ = $1 / $3; }
-	| '(' exp ')'      		{ $$ = $2; }
+	| exp '+' exp       		{ $$ = $1 + $3; }
+	| exp '-' exp     			{ $$ = $1 - $3; }
+	| exp '*' exp       		{ $$ = $1 * $3; }
+	| exp '/' exp  					{ $$ = $1 / $3; }
+	| '(' exp ')'      			{ $$ = $2; }
 	| NUMERO                { $$ = Number($1); }
 ;
