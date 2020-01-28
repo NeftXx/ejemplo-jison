@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Evaluación 1 - 201504420</title>
+    <style>
+      #main-area {
+        background-color: #fafafa;
+        margin: 1rem;
+        padding: 1rem;
+        border: 2px solid #ccc;
+      }
+
+      #button-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .text {
+        border: 1px solid;
+        width: 100%;
+        margin: 2px;
+        resize: none;
+      }
+
+      #consola {
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Ejemplo Jison</h1>
+    <main id="main-area">
+      <div id="button-area">
+        <button onclick="analizar()">Ejecutar</button>
+      </div>
+      <div>
+        <textarea
+          id="editor"
+          cols="30"
+          rows="10"
+          placeholder="Evaluar[exp];"
+          class="text"
+        >
+Evaluar[1+1];
+Evaluar[1+1*2];
+Evaluar[-(1+1*6/3-5+7)];
+Evaluar[-(1+1*6/3-5+1*-2)];
+Evaluar[-(1.6+1.45)];
+        </textarea>
+        <textarea
+          id="consola"
+          cols="30"
+          rows="10"
+          readonly
+          class="text"
+        ></textarea>
+      </div>
+    </main>
+    <script src="analizador.js"></script>
+    <script>
+      function analizar() {
+        var entrada = document.getElementById("editor").value;
+        var salida = analizador.parse(entrada);
+        console.log(salida);
+        document.getElementById("consola").value = salida;
+      }
+    </script>
+  </body>
+</html>
