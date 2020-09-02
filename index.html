@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Evaluación 1 - 201504420</title>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <h1 align="center">Ejemplo Jison</h1>
+    <main id="main-area">
+      <div id="button-area">
+        <button onclick="analizar()">Ejecutar</button>
+      </div>
+      <div>
+        <textarea
+          id="editor"
+          cols="30"
+          rows="10"
+          placeholder="Evaluar[exp];"
+          class="text"
+        >
+Evaluar[1+1];
+Evaluar[1+1*2];
+Evaluar[-(1+1*6/3-5+7)];
+Evaluar[-(1+1*6/3-5+1*-2)];
+Evaluar[-(1.6+1.45)];
+        </textarea>
+        <textarea
+          id="consola"
+          cols="30"
+          rows="10"
+          readonly
+          class="text"
+        ></textarea>
+      </div>
+    </main>
+    <script src="js/grammar/analizador.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
